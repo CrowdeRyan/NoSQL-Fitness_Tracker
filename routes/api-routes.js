@@ -15,6 +15,7 @@ module.exports = function (app) {
         res.status(500).json(err);
       });
   });
+
   app.put("/api/workouts/:id", (req, res) => {
     console.log("*** put /api/workouts/:id is called", req.body);
 
