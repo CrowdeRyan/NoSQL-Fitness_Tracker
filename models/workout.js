@@ -31,4 +31,8 @@ const ExcerciseSchema = new Schema({
       message: "{VALUE} is not integer",
     },
   },
+  distance: {
+    type: Number,
+    min: [0, "Negative number is not allowed"],
+  },
 });
