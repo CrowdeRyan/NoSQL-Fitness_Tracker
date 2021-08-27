@@ -23,4 +23,12 @@ const ExcerciseSchema = new Schema({
       message: "{VALUE} is not integer",
     },
   },
+  sets: {
+    type: Number,
+    min: [0, "Negative number is not allowed"],
+    validate: {
+      validator: Number.isInteger,
+      message: "{VALUE} is not integer",
+    },
+  },
 });
