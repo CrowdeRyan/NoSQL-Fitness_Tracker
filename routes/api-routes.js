@@ -39,5 +39,19 @@ module.exports = function (app) {
         },
       ],
     };
+
+    db.Workout.findOneAndUpdate(
+      { day: { $gt: todayStart, $lt: todayEnd } },
+      { day: now, $push: { exercises: tempJSON.exercises } },
+      { upsert: true, runValidators: true }
+    )
+      .then((dbResult) => {
+        console.log("*** findOneAndUpdate:", dbResult);
+        res.json(dbResult);
+      })
+      .catch((err) => {
+        console.log("*** error ***", err);
+        res.status(500).json(err);
+      });
   });
 };
