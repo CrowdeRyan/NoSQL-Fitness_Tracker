@@ -54,4 +54,7 @@ module.exports = function (app) {
         res.status(500).json(err);
       });
   });
+  app.post("/api/workouts", (req, res) => {
+    console.log("post /api/workouts is called", req.body);
+  });
 };
