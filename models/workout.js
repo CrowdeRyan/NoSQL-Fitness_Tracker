@@ -11,4 +11,8 @@ const ExcerciseSchema = new Schema({
     type: Number,
     min: [0, "Negative number is not allowed"],
   },
+  weight: {
+    type: Number,
+    min: [0, "Negative number is not allowed"],
+  },
 });
