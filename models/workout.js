@@ -36,3 +36,8 @@ const ExcerciseSchema = new Schema({
     min: [0, "Negative number is not allowed"],
   },
 });
+
+const workoutSchema = new Schema({
+  day: Date,
+  exercises: [ExcerciseSchema],
+});
