@@ -15,4 +15,12 @@ const ExcerciseSchema = new Schema({
     type: Number,
     min: [0, "Negative number is not allowed"],
   },
+  reps: {
+    type: Number,
+    min: [0, "Negative number is not allowed"],
+    validate: {
+      validator: Number.isInteger,
+      message: "{VALUE} is not integer",
+    },
+  },
 });
