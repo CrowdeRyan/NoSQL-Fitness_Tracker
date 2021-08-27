@@ -54,7 +54,21 @@ module.exports = function (app) {
         res.status(500).json(err);
       });
   });
+
   app.post("/api/workouts", (req, res) => {
     console.log("post /api/workouts is called", req.body);
+  });
+
+  app.get("/api/workouts/range", (req, res) => {
+    console.log("get /api/workouts/range is called");
+    db.Workout.find({})
+      .then((dbResult) => {
+        console.log("find ok");
+        res.json(dbResult);
+      })
+      .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+      });
   });
 };
