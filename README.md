@@ -4,7 +4,7 @@
 
 ## [App Deloyed on Heroku](https://nosql-fitness-tracker-rr.herokuapp.com/)
 
-## Description: App to write, title, save, recall, and delete notes using text area and title bar.
+## Description:
 
 ![Start Page](./readme-images/start-page.png)
 
