@@ -16,3 +16,11 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
 
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
+
+app.listen(PORT, function () {
+  console.log(
+    "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
+    PORT,
+    PORT
+  );
+});
