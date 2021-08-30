@@ -4,9 +4,9 @@
 
 ## [App Deloyed on Heroku](https://nosql-fitness-tracker-rr.herokuapp.com/)
 
-## Description:
+## Description: A online app to keep track of your exercise routine: including distance, duration, weight, etc.
 
-![Start Page](./readme-images/start-page.png)
+![Start Page](./images/home.png)
 
 # Installation:
 
@@ -14,14 +14,18 @@
 
 # Usage:
 
-    Use "Note Title" and "Note Text" text area to write a note
+    Use "Add Exercise" to fill out workout details.
 
-![Blank page](./readme-images/blank-note.png)
-![Filled text areas](./readme-images/note1.png)
+![Exercise](./images/exercise.png)
 
-    Hit the save button to store in list; select from list to recall.
+    Add Exercise to workout routine: Resistance or Cardio
 
-![Saved note](./readme-images/saved-note.png)
+![Cardio](./images/cardio.png)  
+![Resistance](./images/resist.png)
+
+    Click Dashboard to track workout routine.
+
+![Resistance](./images/dashboard.png)
 
 # Questions: https://github.com/Crowderyan
 
