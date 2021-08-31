@@ -1,8 +1,9 @@
 let mongoose = require("mongoose");
 let db = require("../models");
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
+mongoose.connect("mongodb://localhost/workout", {
   useNewUrlParser: true,
+  useFindAndModify: false,
 });
 
 let workoutSeed = [
@@ -26,7 +27,7 @@ let workoutSeed = [
         type: "resistance",
         name: "Lateral Pull",
         duration: 20,
-        weight: 200,
+        weight: 300,
         reps: 10,
         sets: 4,
       },
@@ -39,7 +40,7 @@ let workoutSeed = [
         type: "resistance",
         name: "Push Press",
         duration: 25,
-        weight: 150,
+        weight: 185,
         reps: 8,
         sets: 4,
       },
@@ -51,7 +52,7 @@ let workoutSeed = [
       {
         type: "cardio",
         name: "Running",
-        duration: 30,
+        duration: 25,
         distance: 4,
       },
     ],
@@ -63,7 +64,7 @@ let workoutSeed = [
         type: "resistance",
         name: "Bench Press",
         duration: 20,
-        weight: 250,
+        weight: 285,
         reps: 10,
         sets: 4,
       },
@@ -76,75 +77,48 @@ let workoutSeed = [
         type: "resistance",
         name: "Bench Press",
         duration: 20,
-        weight: 200,
+        weight: 300,
         reps: 10,
         sets: 4,
       },
     ],
   },
   {
-    day: new Date().setDate(new Date().getDate() - 4),
+    day: new Date(new Date().setDate(new Date().getDate() - 4)),
     exercises: [
       {
         type: "resistance",
         name: "Quad Press",
         duration: 30,
-        weight: 350,
+        weight: 300,
         reps: 10,
         sets: 4,
       },
     ],
   },
   {
-    day: new Date().setDate(new Date().getDate() - 3),
+    day: new Date(new Date().setDate(new Date().getDate() - 3)),
     exercises: [
       {
         type: "resistance",
         name: "Bench Press",
         duration: 20,
-        weight: 250,
+        weight: 300,
         reps: 10,
         sets: 4,
       },
     ],
   },
   {
-    day: new Date().setDate(new Date().getDate() - 2),
+    day: new Date(new Date().setDate(new Date().getDate() - 2)),
     exercises: [
       {
         type: "resistance",
         name: "Military Press",
         duration: 20,
-        weight: 250,
+        weight: 300,
         reps: 10,
         sets: 4,
-      },
-    ],
-  },
-  {
-    day: new Date().setDate(new Date().getDate() - 1),
-    exercises: [
-      {
-        type: "resistance",
-        name: "Bench",
-        weight: 200,
-        reps: 10,
-        sets: 4,
-        duration: 10,
-      },
-      {
-        type: "resistance",
-        name: "Bench2",
-        weight: 200,
-        reps: 10,
-        sets: 4,
-        duration: 20,
-      },
-      {
-        type: "cardio",
-        name: "Bike",
-        duration: 60,
-        distance: 50,
       },
     ],
   },
