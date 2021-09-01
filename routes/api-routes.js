@@ -6,7 +6,6 @@ module.exports = function (app) {
     db.Workout.find({})
       .sort({ day: "asc" })
       .then((dbResult) => {
-        //console.log(dbResult);
         console.log("find ok");
         res.json(dbResult);
       })
@@ -61,15 +60,23 @@ module.exports = function (app) {
   });
 
   app.get("/api/workouts/range", (req, res) => {
-    console.log("get /api/workouts/range is called");
-    db.Workout.find({})
-      .then((dbResult) => {
-        console.log("find ok");
-        res.json(dbResult);
+    db.Workout.aggregate([
+      {
+        $addFields: {
+          totalDuration: {
+            $sum: "$exercises.duration",
+          },
+        },
+      },
+    ])
+      .sort({ _id: -1 })
+      .limit(7)
+      .then((dbWorkouts) => {
+        console.log(dbWorkouts);
+        res.json(dbWorkouts);
       })
       .catch((err) => {
-        console.log(err);
-        res.status(500).json(err);
+        res.json(err);
       });
   });
 };
